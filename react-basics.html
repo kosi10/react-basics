@@ -6,15 +6,26 @@
   <body>
     <div class="js-container"></div>
 
-    <script src="react-basics.js"></script>
-
     <script src="https://unpkg.com/supersimpledev/react.js"></script>
     <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
 
+    <!--babbel is a js compiler- other lang to js -->
     <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <!-- use script to translate jsx(inside script) to js -->
     <script type="text/babel">
+      const button = <button>Hello</button>
+      const paragraph = <p>paragraph</p>
+
+
+      const div = (
+        <div>
+          <button>Hello</button>
+          <p>paragraph</p>
+        </div>
+      );
+
       const container = document.querySelector('.js-container');
-      ReactDOM.createRoot(container).render('Welcome to SuperSimpleDev React Course');
+      ReactDOM.createRoot(container).render(div);
     </script>
   </body>
 </html>
