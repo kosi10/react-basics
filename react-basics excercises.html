@@ -8,6 +8,7 @@
 
     <script src="https://unpkg.com/supersimpledev/react.js"></script>
     <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+    <script src="https://unpkg.com/supersimpledev/dayjs.js"></script>
 
     <!--babbel is a js compiler- other lang to js -->
     <script src="https://unpkg.com/supersimpledev/babel.js"></script>
@@ -15,21 +16,24 @@
     <script type="text/babel">
       const button = <button>Hello</button>
       const paragraph = <p>paragraph</p>
-      const productCost= 10+8+8;
-      const shippingCost = 5;
-      console.log(productCost);
+
+      const currentDate = dayjs().format('MMMM D')
+      const currentTime = dayjs().format('HH:mm:ss')
+      console.log(currentDate);
 
       const div = (
         <div>
-          <p>Product Cost:$ {productCost}</p>
-          <p>Shipping Cost:$ {shippingCost}</p>
-          <p>Total Cost:$ {productCost + shippingCost}</p>
-          <button>Place your order</button>
+          <p>Current time {currentTime}</p>
         </div>
       );
-
+      
       const container = document.querySelector('.js-container');
-      ReactDOM.createRoot(container).render(div);
+      const root = ReactDOM.createRoot(container);
+      root.render(div);
+      setInterval(() => {const currentTime = dayjs().format('HH:mm:ss');
+        const paragraph = <p>Current time {currentTime}</p>
+        root.render(paragraph)
+      }, 1000);
     </script>
   </body>
 </html>
