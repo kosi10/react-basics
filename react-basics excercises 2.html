@@ -14,11 +14,14 @@
     <!-- use script to translate jsx(inside script) to js -->
     <script type="text/babel">
 
-      function ProductDetails({item, price}){
+      function ProductDetails({item, price, discount}){
         return(
           <>
             <p>{item}</p>
             <p>Price: {price}</p>
+            {discount && (
+              <p>Discount price: {discount}</p>
+            )}
             <button>Add to cart</button>
 
           </>
@@ -31,6 +34,7 @@
             <ProductDetails 
               item='Cotton socks'
               price='$10.90'
+              discount='$5.45'
             />
             <ProductDetails 
               item='Tennis Ball'
