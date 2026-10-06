@@ -17,21 +17,33 @@
       const paragraph = <p>paragraph</p>
 
 
-      const div = (
-        <div>
-          <button>Hello</button>
-          <p>paragraph</p>
-        </div>
-      );
+      function LoginForm(){
+        return(
+        <>
+          <input placeholder="Email" />
+            <div>
+              <input 
+                placeholder="Password" 
+                type='password'
+              />
+            </div>
+        </>)
+      }
+      
 
       function App(){
         return(
-          <p>Hello, welcome to my website</p>
+          <>
+            <p>Hello, welcome to my website</p>
+            <LoginForm />
+            <button>Login</button>
+            <button>Sing up</button>
+          </>
         )
       }
 
       const container = document.querySelector('.js-container');
-      ReactDOM.createRoot(container).render(App);
+      ReactDOM.createRoot(container).render(<App />);
     </script>
   </body>
 </html>
