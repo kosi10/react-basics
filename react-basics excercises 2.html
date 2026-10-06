@@ -13,33 +13,35 @@
     <script src="https://unpkg.com/supersimpledev/babel.js"></script>
     <!-- use script to translate jsx(inside script) to js -->
     <script type="text/babel">
-      const button = <button>Hello</button>
-      const paragraph = <p>paragraph</p>
 
-
-      function LoginForm(){
+      function ProductDetails({item, price}){
         return(
-        <>
-          <input placeholder="Email" />
-            <div>
-              <input 
-                placeholder="Password" 
-                type='password'
-              />
-            </div>
-        </>)
+          <>
+            <p>{item}</p>
+            <p>Price: {price}</p>
+            <button>Add to cart</button>
+
+          </>
+        );
       }
-      
 
       function App(){
         return(
           <>
-            <p>Hello, welcome to my website</p>
-            <LoginForm />
-            <button>Login</button>
-            <button>Sing up</button>
+            <ProductDetails 
+              item='Cotton socks'
+              price='$10.90'
+            />
+            <ProductDetails 
+              item='Tennis Ball'
+              price='$6'
+            />
+            <ProductDetails 
+              item='Plain T-Shirt'
+              price='$7.99'
+            />
           </>
-        )
+        );
       }
 
       const container = document.querySelector('.js-container');
